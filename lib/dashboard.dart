@@ -1,3 +1,4 @@
+import 'package:dashboard/components/appbar_actions_items.dart';
 import 'package:dashboard/components/side_menu.dart';
 import 'package:dashboard/config/size_config.dart';
 import 'package:dashboard/style/colors.dart';
@@ -10,6 +11,7 @@ class Dashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
      
         body: Scaffold(
@@ -27,7 +29,7 @@ class Dashboard extends StatelessWidget {
                   Container(
                   width: double.infinity,
                   height: SizeConfig.screenHeight,
-                  color: AppColors.secondaryBg,
+                  color: AppColors.primaryBg,
                 
                 ),),
                 Expanded(
@@ -41,38 +43,24 @@ class Dashboard extends StatelessWidget {
 
                   ),
                   child: Column(
-                    children:  [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                          children:  [
-                            IconButton(
-                              onPressed:(){}, 
-                              icon: SvgPicture.asset('assets/calendar.svg',
-                              width: 20,
-                              ),
-                              ),
-                             const  SizedBox(width: 10,),
-                            IconButton(
-                              onPressed:(){}, 
-                              icon: SvgPicture.asset('assets/ring.svg',
-                              width: 20,
-                              ),
-                              ),
-                             const  SizedBox(width: 15,),
-                            Row(
-                              children: const  [
-                                 CircleAvatar(
-                                  radius: 20,
-                                  backgroundImage: AssetImage('assets/daisy.jpg')
-                                  
-                                
-                                ),
-                              ],
+                    children:   [
+                    const   AppBarActionItems(),
+                      Column(
+                        children:  [
+                          SizedBox(height: SizeConfig.blockSizeVertical! * 5),
+                          Container(
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),
+                            boxShadow: const [BoxShadow(
+                              color: AppColors.iconGray,
+                              blurRadius: 15,
+                              offset: Offset(10, 15),
+                            )]
                             ),
-                           const  Icon(Icons.arrow_drop_down_circle_outlined,
-                            color: Colors.black,),
-                          ]
-                      )
+                            child: Image.asset('assets/card.png'), 
+                          ),
+                        ],
+                      ), 
+
                     ],
                   ),
                 
@@ -83,4 +71,3 @@ class Dashboard extends StatelessWidget {
         ));
   }
 }
-
