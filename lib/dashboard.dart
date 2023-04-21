@@ -1,4 +1,5 @@
 import 'package:dashboard/components/appbar_actions_items.dart';
+import 'package:dashboard/components/payment_detail_list.dart';
 import 'package:dashboard/components/side_menu.dart';
 import 'package:dashboard/config/size_config.dart';
 import 'package:dashboard/style/colors.dart';
@@ -42,27 +43,7 @@ class Dashboard extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30,
 
                   ),
-                  child: Column(
-                    children:   [
-                    const   AppBarActionItems(),
-                      Column(
-                        children:  [
-                          SizedBox(height: SizeConfig.blockSizeVertical! * 5),
-                          Container(
-                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),
-                            boxShadow: const [BoxShadow(
-                              color: AppColors.iconGray,
-                              blurRadius: 15,
-                              offset: Offset(10, 15),
-                            )]
-                            ),
-                            child: Image.asset('assets/card.png'), 
-                          ),
-                        ],
-                      ), 
-
-                    ],
-                  ),
+                  child: const PaymentDetailList(),
                 
                 ),),
               ],
@@ -71,3 +52,4 @@ class Dashboard extends StatelessWidget {
         ));
   }
 }
+
