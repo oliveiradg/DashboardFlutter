@@ -11,6 +11,7 @@ class PaymentDetailList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      
       children: [
         const AppBarActionItems(),
         Column(
