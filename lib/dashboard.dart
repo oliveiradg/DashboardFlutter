@@ -44,21 +44,7 @@ class Dashboard extends StatelessWidget {
                 child: const PaymentDetailList(),
               ),
             ),
-              SizedBox(height: SizeConfig.blockSizeVertical! * 5,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  PrimaryText(text: 'Atividades Recentes', 
-                  size: 18,
-                  fontWeight: FontWeight.w800, ),
-                  PrimaryText(text: '22 abril 2023', 
-                  size: 14,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.secondary , ),
-                  
-                   
-                ]
-              )
+              
           ],
         ),
       ),
